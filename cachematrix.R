@@ -2,7 +2,7 @@
 ## Data Science Specialization Track
 ##
 ## Matrix inversion is usually a costly computation and there may be some benefit to caching the 
-## inverse of a matrix rather than compute it repeatedly.These pair of functionscache the inverse 
+## inverse of a matrix rather than compute it repeatedly.These pair of functions cache the inverse 
 ## of a matrix.
 ## 
 ## This file provides the following functions:
@@ -25,11 +25,11 @@
 ###################
 makeCacheMatrix <- function(x = matrix()) {
   
-  inv.matrix <- NULL
+  m <- NULL
   
   set <- function(y) {
     x <<- y
-    inv.matrix <<- NULL
+    m <<- NULL
   }
   
   # get function
@@ -37,10 +37,10 @@ makeCacheMatrix <- function(x = matrix()) {
   get <- function() x
   
   # Manually set the inverse
-  setinverse <- function(inverse) inv.matrix <<- inverse
+  setinverse <- function(inverse) m <<- inverse
   
   # Get the inverse
-  getinverse <- function() inv.matrix
+  getinverse <- function() m
   
   # Encapsulate into a list
   list(set = set, 
